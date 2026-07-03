@@ -13,10 +13,12 @@ username
 jdoe
 asmith
 bwayne
-3. In OCI Cloud Shell
+
+4. In OCI Cloud Shell
 bash# Upload delete_idcs_users.py and users_to_delete.csv via Cloud Shell's upload button (⋮ menu)
 
 pip3 install --user requests   # usually already available in Cloud Shell
+
 4. Dry run first (no deletions happen)
 bashpython3 delete_idcs_users.py \
   --csv users_to_delete.csv \
@@ -24,7 +26,8 @@ bashpython3 delete_idcs_users.py \
   --client-id <YOUR_CLIENT_ID> \
   --client-secret <YOUR_CLIENT_SECRET>
 Review the console output and delete_results.csv — it'll show DRY_RUN_WOULD_DELETE or NOT_FOUND for each user.
-5. Actually delete, once you're confident
+
+6. Actually delete, once you're confident
 bashpython3 delete_idcs_users.py \
   --csv users_to_delete.csv \
   --idcs-url https://idcs-xxxxxxxxxxxxxxxx.identity.oraclecloud.com \
@@ -37,3 +40,6 @@ By default this does a permanent delete (forceDelete=true). Add --soft-delete if
 --delay (default 0.3s) throttles calls between users to avoid hitting API rate limits — bump it up if you have a large list.
 Results (per-user status: DELETED, NOT_FOUND, ERROR) get logged to delete_results.csv for an audit trail.
 Avoid passing the client secret as a bare CLI arg on a shared system if you're security-conscious — you can instead hardcode it as an environment variable and read it with os.environ if you'd like; happy to adjust the script for that.
+
+
+<img width="717" height="270" alt="image" src="https://github.com/user-attachments/assets/b1defbf3-2fbe-4939-99e7-3524ad3ce171" />
