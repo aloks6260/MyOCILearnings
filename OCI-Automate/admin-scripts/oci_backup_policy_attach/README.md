@@ -29,3 +29,4 @@ python attach_backup_policy.py \
     --workers 5 \
     --dry-run
 Run once with --dry-run first to preview exactly what would change, then drop the flag to execute. A couple of things worth knowing before you run it at scale:
+<img width="1437" height="62" alt="image" src="https://github.com/user-attachments/assets/22e6442b-3d08-45f6-882e-462e8f30e02e" />
